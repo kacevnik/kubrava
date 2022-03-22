@@ -46,18 +46,15 @@
 
 		<a class="call_to_phone" href="tel:+7(495)241-22-71">+7 (495) 241-22-71</a>
 
-		<?php 
-			wp_nav_menu( array( 
+		<?php
+			wp_nav_menu( array(
 				'theme_location' => 'main-menu',
-			) 
+			)
 		);
 		?>
 
 		<div class="social_links">
-			<a href="https://www.facebook.com/sariccipm/" target="_blank"><img src="/wp-content/themes/s-a-ricci/img/icons/facebook.png" alt="social link"></a>
-			<a href="https://www.instagram.com/sariccipm/" target="_blank"><img src="/wp-content/themes/s-a-ricci/img/icons/instagram.png" alt="social link"></a>
-			<a href="https://www.youtube.com/channel/UC1TRQpLjUCXtKXaYwe0Svrg"><img src="/wp-content/themes/s-a-ricci/img/icons/youtube.png" alt="social link"></a>
-		
+            <?php	dynamic_sidebar('social_form_widget'); ?>
 		</div>
 		<a class="topmail" href="mailto:info@kubrava.com"><img src="/wp-content/themes/s-a-ricci/img/mail_mobi.svg" alt="mailsvg"></a>
 	</div>
@@ -72,10 +69,10 @@
 			</div>
 			<nav class="main_navigation">
 
-			<?php 
-				wp_nav_menu( array( 
+			<?php
+				wp_nav_menu( array(
 					'theme_location' => 'main-menu',
-				) 
+				)
 			);
 			?>
 			</nav>
