@@ -48,7 +48,7 @@ if ( ! function_exists( 's_a_ricci_setup' ) ) :
 		function change_email($email) {
 			return 'noreply@riccipm.ru';
 		}
-		 
+
 		add_filter('wp_mail_from','change_email');
 
 		/*
@@ -94,7 +94,7 @@ add_action( 'after_setup_theme', 's_a_ricci_setup' );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-// переопределяет стандартную разметку виджета 
+// переопределяет стандартную разметку виджета
 
  //убирает заголовки
 add_filter( 'widget_title', 'hide_widget_title' );
@@ -184,7 +184,7 @@ function register_my_widgets(){
 		'after_title'   => "</h2>\n",
 	) );
 
-	
+
 	register_sidebar( array(
 		'name' => 'Вкладка видео',
 		'id'            => "tab_video",
@@ -206,7 +206,7 @@ function register_my_widgets(){
 		'before_title'  => '<h2 style="display:none" class="widgettitle">',
 		'after_title'   => "</h2>\n",
 	) );
-	
+
 	register_sidebar( array(
 		'name' => 'Форма отправки заявки',
 		'id'            => "form_widget",
@@ -216,6 +216,17 @@ function register_my_widgets(){
 		'after_widget'  => ' ',
 		'before_title'  => '<h2 style="display:none" class="widgettitle">',
 		'after_title'   => "</h2>\n",
+	) );
+
+    register_sidebar( array(
+		'name' => 'Социальные сети',
+		'id'            => "social_form_widget",
+		'description'   => 'html код ссылок на социальные сети',
+		'class'         => '',
+		'before_widget' => ' ',
+		'after_widget'  => ' ',
+		'before_title'  => '',
+		'after_title'   => "",
 	) );
 
 	register_sidebar( array(
@@ -285,7 +296,7 @@ function register_my_widgets(){
 	) );
 }
 add_action( 'widgets_init', 'register_my_widgets' ); // команда инициализации виджета
- 
+
 // Мои настройки***
 
 // Подключение стилей и скриптов
@@ -316,15 +327,15 @@ function s_a_ricci_styles_head(){
 	wp_enqueue_script( 'owl', get_template_directory_uri() . '/libs/owl/owl.carousel.js');
 	wp_enqueue_script( 'commonfile', get_template_directory_uri() . '/js/common.js', array('jquery'), '', true);
 
-	wp_localize_script( 'commonfile', 'Translete', array( 
-		'btnMoreProjects' => __( 'Больше проектов', 's-a-ricci' ), 
+	wp_localize_script( 'commonfile', 'Translete', array(
+		'btnMoreProjects' => __( 'Больше проектов', 's-a-ricci' ),
 	) );
-	
+
 }
 	// скрипты
 function s_a_ricci_scripts_footer(){
 
-} 
+}
 
 //Заменим разделитель title на страницах
 add_filter( 'document_title_separator', function(){ return ' | '; } );
@@ -569,7 +580,7 @@ function true_duplicate_post_as_draft(){
 	if (! ( isset( $_GET['post']) || isset( $_POST['post'])  || ( isset($_REQUEST['action']) && 'true_duplicate_post_as_draft' == $_REQUEST['action'] ) ) ) {
 		wp_die('Нечего дублировать!');
 	}
- 
+
 	/*
 	 * получаем ID оригинального поста
 	 */
@@ -578,7 +589,7 @@ function true_duplicate_post_as_draft(){
 	 * а затем и все его данные
 	 */
 	$post = get_post( $post_id );
- 
+
 	/*
 	 * если вы не хотите, чтобы текущий автор был автором нового поста
 	 * тогда замените следующие две строчки на: $new_post_author = $post->post_author;
@@ -586,12 +597,12 @@ function true_duplicate_post_as_draft(){
 	 */
 	$current_user = wp_get_current_user();
 	$new_post_author = $current_user->ID;
- 
+
 	/*
 	 * если пост существует, создаем его дубликат
 	 */
 	if (isset( $post ) && $post != null) {
- 
+
 		/*
 		 * массив данных нового поста
 		 */
@@ -610,12 +621,12 @@ function true_duplicate_post_as_draft(){
 			'to_ping'        => $post->to_ping,
 			'menu_order'     => $post->menu_order
 		);
- 
+
 		/*
 		 * создаем пост при помощи функции wp_insert_post()
 		 */
 		$new_post_id = wp_insert_post( $args );
- 
+
 		/*
 		 * присваиваем новому посту все элементы таксономий (рубрики, метки и т.д.) старого
 		 */
@@ -624,7 +635,7 @@ function true_duplicate_post_as_draft(){
 			$post_terms = wp_get_object_terms($post_id, $taxonomy, array('fields' => 'slugs'));
 			wp_set_object_terms($new_post_id, $post_terms, $taxonomy, false);
 		}
- 
+
 		/*
 		 * дублируем все произвольные поля
 		 */
@@ -639,8 +650,8 @@ function true_duplicate_post_as_draft(){
 			$sql_query.= implode(" UNION ALL ", $sql_query_sel);
 			$wpdb->query($sql_query);
 		}
- 
- 
+
+
 		/*
 		 * и наконец, перенаправляем пользователя на страницу редактирования нового поста
 		 */
@@ -651,7 +662,7 @@ function true_duplicate_post_as_draft(){
 	}
 }
 add_action( 'admin_action_true_duplicate_post_as_draft', 'true_duplicate_post_as_draft' );
- 
+
 /*
  * Добавляем ссылку дублирования поста для post_row_actions
  */
@@ -661,7 +672,7 @@ function true_duplicate_post_link( $actions, $post ) {
 	}
 	return $actions;
 }
- 
+
 add_filter( 'post_row_actions', 'true_duplicate_post_link', 10, 2 );
 
 
@@ -709,12 +720,12 @@ if( 'Disable REST API' ){
 function tags_support_all() {
     register_taxonomy_for_object_type('post_tag', 'page');
 }
- 
+
 // Убеждаемся, что все теги включены в запросы
 function tags_support_query($wp_query) {
     if ($wp_query->get('tag')) $wp_query->set('post_type', 'any');
 }
- 
+
 // tag крючек
 add_action('init', 'tags_support_all');
 add_action('pre_get_posts', 'tags_support_query');
@@ -764,7 +775,7 @@ function registr_note_post_type(){
 		'supports'           => array('title','editor','author','thumbnail','excerpt','comments', 'tags')
 	) );
 
-	register_taxonomy( 'blogcat', [ 'blog' ], [ 
+	register_taxonomy( 'blogcat', [ 'blog' ], [
 		'label'                 => '',
 		'labels'                => [
 			'name'              => 'Категории Блога',
@@ -799,4 +810,3 @@ function change_query_blog( $query ) {
 		$query->set( 'posts_per_page', -1 );
 	}
 }
-
