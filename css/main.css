@@ -899,10 +899,16 @@ body:not(.post-type-archive-blog) .tabs_container__item:hover h4, body:not(.post
 }
 
 .main_footer {
-  margin-top: -2px;
+  margin-top: -50px;
   width: 100%;
   min-height: 300px;
   background-color: #2e3740;
+}
+
+@media only screen and (max-width: 1280px){
+  .main_footer {
+    margin-top: -30px;
+  }
 }
 
 .consultation {

@@ -1,24 +1,13 @@
 	<!-- FOOTER -->
 	<footer class="main_footer">
 	<div class="container">
-<!-- INSTAGRAM SECTION-->
-<div class="row">
-	<div class="instagramm_wrapper">
-		<img src="/wp-content/themes/s-a-ricci/img/project/instagram.png" alt="instagram">
-		<h3><?php _e( 'Последние публикации', 's-a-ricci' ); ?></h3>
-		<a class="ins_btn" target="_blank" href="https://instagram.com/sariccipm">instagram.com/sariccipm</a>
-		<div class="instagramm_module_wrapper">
-		<?php	dynamic_sidebar('instagram_section'); ?>	
-		</div>
-	</div>
-</div>
 <!-- COPYRIGHT SECTION-->
 <div class="row">
 	<div class="copyright_wrapper">
 		<span>© KUBRAVA PROJECT MANAGEMENT ™ 2012 — <?php echo date('Y') ?></span>
-		<span><a class="konf" href="/politika-konfedicialnosti/"><?php _e( 'Политика конфедициальности', 's-a-ricci' ); ?></a></span>	
-		
-			<?php	dynamic_sidebar('footer_section'); ?>	
+		<span><a class="konf" href="/politika-konfedicialnosti/"><?php _e( 'Политика конфедициальности', 's-a-ricci' ); ?></a></span>
+
+			<?php	dynamic_sidebar('footer_section'); ?>
 	</div>
 </div>
 
@@ -26,7 +15,7 @@
 
 <!-- popup -->
 <div style="display: none;max-width:600px;" id="politica">
-<?php	dynamic_sidebar('popup_section'); ?>	
+<?php	dynamic_sidebar('popup_section'); ?>
 </div>
 
 
@@ -61,10 +50,6 @@
 </script>
 
 <!-- Подключение скриптов js вынесено в functions.php-->
-<?php wp_footer(); ?> 
+<?php wp_footer(); ?>
 </body>
 </html>
-
-
-
-
