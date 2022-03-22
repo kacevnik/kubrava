@@ -1,0 +1,88 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kodimweb\n"
+"POT-Creation-Date: 2020-05-27 15:07+0300\n"
+"PO-Revision-Date: 2020-05-27 15:14+0300\n"
+"Last-Translator: \n"
+"Language-Team: kodimweb\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive-blog.php:31
+msgid "Блог"
+msgstr "Blog"
+
+#: category.php:32
+msgid "Реализованные проекты"
+msgstr "Implemented project"
+
+#: footer.php:8
+msgid "Последние публикации"
+msgstr "Recent publication"
+
+#: footer.php:19
+msgid "Политика конфедициальности"
+msgstr "Privacy policy"
+
+#: functions.php:291
+msgid "Больше проектов"
+msgstr "More projects"
+
+#: functions.php:372
+msgid "Главная"
+msgstr "Home"
+
+#: index.php:51
+msgid "реализованных специалистами проектов"
+msgstr "implemented by the specialists of the projects"
+
+#: index.php:85
+msgid "Все проекты"
+msgstr "All projects"
+
+#: index.php:85
+msgid "Все"
+msgstr "All"
+
+#: sidebar.php:23
+msgid "Мы в соцсетях"
+msgstr "We are in social networks"
+
+#: single-post.php:44
+msgid "Заказчик"
+msgstr "Customer"
+
+#: single-post.php:48
+msgid "Адрес"
+msgstr "Address"
+
+#: single-post.php:49
+msgid "Вид работ"
+msgstr "Type of work"
+
+#: single-post.php:50
+msgid "Площадь"
+msgstr "Space"
+
+#: single-post.php:51
+msgid "Сроки"
+msgstr "Deadlines"
+
+#: single-post.php:54
+msgid "Управление проектом"
+msgstr "Managing project"
+
+#: single-post.php:99 single-post.php:105
+msgid "Предыдущий проект"
+msgstr "Previous project"
+
+#: single-post.php:111 single-post.php:117
+msgid "Следующий проект"
+msgstr "Following project"
